@@ -1,4 +1,4 @@
-import { BrowserRouter, Route , Switch, NavLink} from 'react-router-dom'
+import { BrowserRouter, Route , Switch, NavLink, Redirect} from 'react-router-dom'
 //styling
 import './App.css'
 // page components
@@ -33,6 +33,10 @@ function App() {
            
            <Route path="/articles/:id">
             <Article />
+           </Route>
+
+           <Route path="*">
+             <Redirect to="/"/>
            </Route>
    
 
