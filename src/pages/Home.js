@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useFetch } from '../hooks/useFetch'
 
 //style
@@ -13,10 +14,11 @@ export default function Home() {
       {isPending && <div>Loading....</div>}
       {error && <div>{error}</div>}
       
-      {articles && articles.map((atricle) => (
-       <div key={atricle.id} className="card">
-         <h3>{atricle.title}</h3>
-         <p>{atricle.author}</p>
+      {articles && articles.map((article) => (
+       <div key={article.id} className="card">
+         <h3>{article.title}</h3>
+         <p>{article.author}</p>
+         <Link to={`/articles/${article.id}`}>Read more....</Link>
        </div>
 
       ))}
